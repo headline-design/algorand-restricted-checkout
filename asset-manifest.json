@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/algorand-restricted-checkout/static/css/main.787c41ec.chunk.css",
+    "main.js": "/algorand-restricted-checkout/static/js/main.22e489c9.chunk.js",
+    "main.js.map": "/algorand-restricted-checkout/static/js/main.22e489c9.chunk.js.map",
+    "runtime-main.js": "/algorand-restricted-checkout/static/js/runtime-main.eb436d95.js",
+    "runtime-main.js.map": "/algorand-restricted-checkout/static/js/runtime-main.eb436d95.js.map",
+    "static/js/2.55577a6c.chunk.js": "/algorand-restricted-checkout/static/js/2.55577a6c.chunk.js",
+    "static/js/2.55577a6c.chunk.js.map": "/algorand-restricted-checkout/static/js/2.55577a6c.chunk.js.map",
+    "static/js/3.e778c3d4.chunk.js": "/algorand-restricted-checkout/static/js/3.e778c3d4.chunk.js",
+    "static/js/3.e778c3d4.chunk.js.map": "/algorand-restricted-checkout/static/js/3.e778c3d4.chunk.js.map",
+    "index.html": "/algorand-restricted-checkout/index.html",
+    "static/css/main.787c41ec.chunk.css.map": "/algorand-restricted-checkout/static/css/main.787c41ec.chunk.css.map",
+    "static/js/2.55577a6c.chunk.js.LICENSE.txt": "/algorand-restricted-checkout/static/js/2.55577a6c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eb436d95.js",
+    "static/js/2.55577a6c.chunk.js",
+    "static/css/main.787c41ec.chunk.css",
+    "static/js/main.22e489c9.chunk.js"
+  ]
+}
