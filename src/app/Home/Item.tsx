@@ -1,15 +1,24 @@
 import React from "react";
-import { Card, Image, Heading, Box, Pill, Flex, Icon, Text } from "pipeline-ui";
-import { ButtonBuy } from "./ButtonBuy/ButtonBuy";
+import { Card, Image, Heading, Box, Pill, Text } from "pipeline-ui";
+import { ButtonBuy } from "./ButtonBuy";
 
-type Props = {
+export type Props = {
+  id: number;
   name: string;
+  description: string;
   price: number;
   image: string;
   isNew?: boolean;
 };
 
-export const Item: React.FC<Props> = ({ name, price, image, isNew }) => {
+export const Item: React.FC<Props> = ({
+  id,
+  name,
+  description,
+  price,
+  image,
+  isNew,
+}) => {
   return (
     <Box p={3} width={[1, 0.5, 0.33, 0.25]}>
       <Card p={4}>
@@ -22,11 +31,10 @@ export const Item: React.FC<Props> = ({ name, price, image, isNew }) => {
         <Heading as="h2" mb={3}>
           {name}
         </Heading>
-        <Flex alignItems="center" mb={3}>
-          <Icon name={"Algo"} mr={2} />
-          <Text>Pay using your Algorand Wallet</Text>
-        </Flex>
-        <ButtonBuy price={price} />
+        <Box mb={3}>
+          <Text>{description}</Text>
+        </Box>
+        <ButtonBuy price={price} url={`/checkout/${id}`} />
       </Card>
     </Box>
   );
