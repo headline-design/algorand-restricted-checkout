@@ -1,0 +1,18 @@
+[
+  {
+    "image": "https://www.algorand.com/assets/media-kit/logos/full/png/algorand_full_logo_black.png",
+    "name": "Algorand test item 1",
+    "price": 10,
+    "isNew": true
+  },
+  {
+    "image": "https://www.algorand.com/assets/media-kit/logos/full/png/algorand_full_logo_black.png",
+    "name": "Algorand test item 2",
+    "price": 10
+  },
+  {
+    "image": "https://www.algorand.com/assets/media-kit/logos/full/png/algorand_full_logo_black.png",
+    "name": "Algorand test item 3",
+    "price": 10
+  }
+]
