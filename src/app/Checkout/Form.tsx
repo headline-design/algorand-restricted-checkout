@@ -14,7 +14,8 @@ import { Link } from "react-router-dom";
 const recipientAddress = process.env.REACT_APP_RECIPIENT_ADDRESS;
 
 const assetIndex = 0; // 0 for ALGO
-let toastProvider: any = undefined;
+
+const convertToMilliAlgo = (price: number) => price * 1e6;
 
 type Props = {
   wallet: {
@@ -31,46 +32,48 @@ export class Form extends React.Component<Props> {
   };
 
   handleSend = (transactionId: string) => {
-    toastProvider.addMessage("Processing transaction...", {
-      secondaryMessage: "Checking progress on Algo Explorer",
-      actionHref: "https://algoexplorer.io/",
-      actionText: "Check",
-      variant: "processing",
-    });
     this.setState({ status: "done", transactionId });
   };
 
   render() {
     const { wallet, item, pipeline } = this.props;
     const { status, transactionId } = this.state;
+    const priceInMilliAlgo = convertToMilliAlgo(item.price);
 
     return (
       <Box width="100%" maxWidth="800px">
-        <ToastMessage.Provider
-          ref={(node: React.ReactNode) => (toastProvider = node)}
-        />
         {status === "ready" ? (
           <>
             <Text>Connected wallet address (your wallet)</Text>
             <AlgoAddress textLabels address={wallet.address} />
             <Text>Current wallet balance {wallet.balance}</Text>
 
-            <Text mt={4}>
-              Click "Send" button to pay for the{" "}
-              <strong>{item.name} and finalize your order</strong>
+            <Text mt={4} textAlign="right">
+              Click "Send" button to pay <strong>{item.price} ALGO</strong> for
+              the <strong>{item.name}</strong> and finalize your order
             </Text>
-            <Box mt={1}>
+            <Flex mt={1} justifyContent="space-between">
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <Button
+                  icon="LinkIcon"
+                  mainColor="secondary"
+                  contrastColor="darkgrey"
+                  border="1px solid"
+                >
+                  Go back to the Homepage
+                </Button>
+              </Link>
               <AlgoSendButton
                 index={assetIndex}
                 recipient={recipientAddress}
-                amount={item.price * 1e3}
+                amount={priceInMilliAlgo}
                 note={`Order itemId: ${item.id} itemName: ${item.name}`}
                 wallet={pipeline}
                 returnTo={"txID"}
                 context={this}
                 onChange={this.handleSend}
               />
-            </Box>
+            </Flex>
           </>
         ) : (
           <Flex justifyContent="center" width="100%">
@@ -82,7 +85,7 @@ export class Form extends React.Component<Props> {
             >
               <ToastMessage.Success
                 width="100%"
-                message="Payment done"
+                message="Payment sent"
                 secondaryMessage={`Transaction ID: ${transactionId}`}
                 actionText=""
               />

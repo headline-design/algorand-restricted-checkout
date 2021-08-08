@@ -2,8 +2,9 @@ import { Pipeline } from "pipeline-ui";
 
 export const pipeline = Pipeline.init();
 
+console.log(process.env);
 // Force testnet
-Pipeline.main = false;
+Pipeline.main = process.env.REACT_APP_USE_TESTNET !== "true";
 
 export const verifyWallet = (price: number) => async () => {
   let address = "";
