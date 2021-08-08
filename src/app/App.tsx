@@ -10,7 +10,7 @@ function App() {
     <BaseStyles
       style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
     >
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Box as="header" backgroundColor="grey" pt={2} pb={2}>
           <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
             <Flex

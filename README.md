@@ -20,6 +20,11 @@ In order to manage your TESTNET assets you have to switch to the TESTNET, check 
 
 It is also a good idea to create more than one address so you can test ALGO sending through the app.
 
+## Check the online version
+
+Visit https://johnmgrimm.github.io/algorand-restricted-checkout to see the app that is working with the ALGO TESTNET.
+If you make any payment it will use my TESTNET wallet as a recipient address.
+
 ## Running locally
 
 Clone the project with `git clone https://github.com/johnmgrimm/algorand-restricted-checkout.git`.
@@ -27,7 +32,7 @@ Clone the project with `git clone https://github.com/johnmgrimm/algorand-restric
 Put one of your ALGO wallet addresses inside `./env` file as `REACT_APP_RECIPIENT_ADDRESS`. This will be the address that will receive ALGOs.
 
 Right now everything is set and you can execute `yarn start` command.
-By default you should be able to see the results by opening http://localhost:3000.
+By default you should be able to see the results by opening http://localhost:3000/algorand-restricted-checkout/.
 
 ![Store Homepage](./docs/store-home.png)
 
