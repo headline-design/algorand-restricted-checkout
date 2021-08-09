@@ -83,6 +83,20 @@ used (either Home or Checkout).
 
 There is some level of responsiveness built-in to the app to test how it works with the Pipeline UI library (see the Homepage).
 
+## Pipeline UI components used
+
+- Flex, Box, Text - used nearly everywhere as they are base components to build from
+- Card, Image, Heading, Pill - used for the "items" presentation
+- Loader - used to show loading icon when user logs into the wallet
+- ToastMessage - used to notify user about successes and failures when establishing wallet connection
+- AlgoSendButton - used to transfer funds from the user account to the account configured in application
+- Button - used to navigate across application pages and to trigger actions
+
+## Pipeline UI functions used
+
+- connect - initializes wallet connection
+- balance - checking wallet balance
+
 ## LICENSE
 
 [MIT](./LICENSE)
