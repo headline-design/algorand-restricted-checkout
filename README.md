@@ -97,6 +97,10 @@ There is some level of responsiveness built-in to the app to test how it works w
 - connect - initializes wallet connection
 - balance - checking wallet balance
 
+## Pipeline UI library feedback
+
+https://github.com/algorandfoundation/grow-algorand/issues/85#issuecomment-894876646
+
 ## LICENSE
 
 [MIT](./LICENSE)
